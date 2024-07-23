@@ -1,0 +1,105 @@
+Q..1
+
+//CALL THE JAVA UTIL PACKAGE FOR USER INPUT
+import java.util.Scanner;
+public class Except 
+{
+	//START MAIN METHOD
+	public static void main(String[] args) 
+	{
+		        //INITIALIZE MEMBER VARIABLE
+			int sum,div,sub,mul; 
+			//MAKE OBJECT AND 
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter the first value");
+			//TAKE USER INPUT
+			int num_1=sc.nextInt();
+			System.out.println("Enter the second value");
+			int num_2=sc.nextInt();
+			// APPLY THE OPERATIONS
+			sum=num_1+num_2;
+			System.out.println("Value of sum :"+sum);
+		
+			sub=num_1-num_2;
+			System.out.println("Value os sub :"+sub);
+				
+			mul=num_1*num_2;
+			System.out.println("value of mul :"+mul);
+		
+			 //INITIALIZE TRY CATCH BLOCK FOR EXCEPTIONS
+	        	 try
+			{	
+					div=num_1/num_2;	                                      
+					System.out.println(div);
+		        }
+	       	        //WITH THE HELP OF CATCH GENRATE A USER UNDESTANDABLE MESSAGE
+	                catch(Exception e)	
+	         	{
+	        	 System.out.println("Error occured " +e.getMessage());
+	         	}
+
+	                 System.out.println("Rest result shown");
+       }
+
+}
+-------------------------------------------------------------------------------------------------
+Q..2
+
+//CREATE A BANK ACCOUNT MANAGMENT SYSTEM
+public class BankAccount 
+{
+	//INITIALIZE MEMBER VARIABLES
+	private String DepositerName;
+	private long AccNumber;
+	private int AccBalance;
+	
+	//GENRATE A PARAMETARIZED CONSTRUCTOR 
+	public BankAccount(String depositerName, long accNumber, int accBalance) 
+	{
+		
+		DepositerName = depositerName;
+		AccNumber = accNumber;
+		AccBalance = accBalance;
+	}
+	//CREATE A DISPLAY METHOD FOR USER INFORMATION
+	public void display()
+	{
+		System.out.println("DepositerName: " +DepositerName);
+		System.out.println("AccNumber: " +AccNumber);
+		System.out.println("AccBalance: " +AccBalance);
+	
+	}
+	//CREATE A SINGLE PARAMETR METHOD
+	public void deposit (int amount)
+	{
+		//ADD THE DEPOSIT AMOUNT INTO ACCOUNT
+		AccBalance=AccBalance+amount;
+		//System.out.println(AccBalance);
+	}
+	//CREATE A SINGLE PARAMETR METHOD
+	public void witdraw(int amount)
+	{
+		//CHECK THE CONDITION FOR WITDRAW A AMOUNT
+		if(amount<=AccBalance)
+		AccBalance-=amount;
+	}
+}
+	
+public class MainBank 
+{
+	//CREATE A MAIN METHOD
+	public static void main(String[] args) 
+	{
+		//PASS THE ARGUMENTS OF CONSTRUCTOR AND DEPOSIT AMOUNT
+		BankAccount b1=new BankAccount("Jacob",12345,50000);		
+		b1.deposit(20000);
+		b1.display();
+		
+		System.out.println("-------------------------");
+		BankAccount b2=new BankAccount("Reigns",67890,30000);
+		b2.witdraw(20000);
+		b2.display();	
+       }
+		
+}
+

@@ -1,0 +1,188 @@
+  Q..1
+		// INFO ABOUT VIOLENCE OF TRAFFIC RULE
+
+         public class Exam 		
+{
+		private String rname;	// MEMBER VARIABLE DECLARATION
+		private int rcharge;
+		private String rsection;
+						//USE THE CONCEPT OF ENCAPSULATION AND ABSTRACTION(SETTER AND GETTER)
+		public String getRname() {
+			return rname;
+		}
+		public void setRname(String rname) {
+			this.rname = rname;
+		}
+		public int getRcharge() {
+			return rcharge;
+		}
+		public void setRcharge(int rcharge) {
+			this.rcharge = rcharge;
+		}
+		public String getRsection() {
+			return rsection;
+		}
+		public void setRsection(String rsection) {
+			this.rsection = rsection;
+		}
+}
+
+	// EXTENDS THE FEATURE OF EXAM CLASS AND ADD NEW INFORMATION
+      public class Update extends Exam{
+	
+	private String ramends;
+
+	public String getRamends() {
+		return ramends;
+	}
+
+	public void setRamends(String ramends) {
+		this.ramends = ramends;
+	}
+}
+
+      public class MainR {
+	
+	public static void main(String args[])
+	{
+		Exam e1 = new Exam();		// ABSTRACT THE VALUES HERE BY THE HELP OF SETER CONCEPT
+		e1.setRname("Drink and Drive");
+		e1.setRcharge(1000);
+		e1.setRsection("sec_185");
+		
+		Update e2 = new Update();		// UPDATE THE NEW INFO OF THIS CLASS 
+		e2.setRamends("1 yr jail and fine");
+		
+		System.out.println("Advidory genrate by law department");		// PRINT THE VALUE BY THE CONCEPT OF GETTER
+		System.out.println(e1.getRname()+"\n"+e1.getRsection()+"\n"+e1.getRcharge()+"\n"+e2.getRamends());		
+	}
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Q..2
+
+       public class ExamO {
+	             // USE THE CONCEPT OF OVERLOADING METHOD 
+	public void over(int a, int b)		//USE SAME SIGNATURE NAME BUT PASS THE DIFFERENT ORDER OF DATA TYPES FOR OVERLOADING FUNCTIONALITY
+	{
+		System.out.println("values of a+b :" +(a+b));
+	}
+	public void over(int a, float b)
+	{
+		System.out.println("values of a*b :" +(a*b));
+	}
+		public void over(float a, int b)
+		{
+			System.out.println("values of a-b :" +(a-b));
+			System.out.println("values of a/b :" +(a/b));
+		}
+		public void over(int a, int b, float c)	// PASS THE 3 ARGUMENT BUT SIGNATURE NAME IS SAME... SHOW CONCEPT OF OVERLOADING
+		{
+			System.out.println("values of (a-b-c) :" +(a-b-c));
+		}
+}
+
+        public class MainO {
+	
+	public static void main(String[] args) 
+	{			//CREATE OBJECT FOR PASS THE VALUES AS DEFINATION CREATED
+		ExamO e1 = new ExamO();
+		e1.over(5,5);
+		e1.over(5, 2.5f);
+		e1.over(15.8f, 5);
+		e1.over(3, 5,5.5f);
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q..3
+         // METHOD OVERRIDE EXAMPLE
+      public class Hospital 
+{					// VARIABLE DECLARATION
+		private String name;
+		private String city;
+		private int bed;
+		private String special;
+							// CREATE A PARAMETARIZED CONSTRUCTOR FOR PASS THE ARGUMENTS
+		public Hospital(String name, String city, int bed, String special) {
+			this.name = name;
+			this.city = city;
+			this.bed = bed;
+			this.special = special;
+		}					// CREATE SETTER AND GETTER METHOD FOR USE THE CONCEPT OF ENCAPSULATION AND ABSTRACTION
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCity() {
+			return city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public int getBed() {
+			return bed;
+		}
+
+		public void setBed(int bed) {
+			this.bed = bed;
+		}
+
+		public String getSpecial() {
+			return special;
+		}
+
+		public void setSpecial(String special) {
+			this.special = special;
+		}
+		public void show1()	// CREATE A METHOD FOR DISPLAY THE VALUES
+		{
+			System.out.println(name+" "+city+" "+bed+" "+special);
+		}
+}
+		
+		
+     // EXTENDS HOSPITAL CLASS TO GET THE VALUES
+     public class Add extends Hospital
+{			// ADD NEW VARIABLE TO ADD NEW INFORMATION
+	private String add;
+	
+	public Add(String name, String city, int bed, String special, String add) {
+		super(name, city, bed, special);
+		this.add = add;
+	}
+	public String getAdd() {
+		return add;
+	}
+
+	public void setAdd(String add) {
+		this.add = add;
+	}
+	public void show1()
+	{		// OVERRIDE THE METHOD BY THE HELP OF SUPER KEYWORD
+		super.show1();		
+		System.out.println(add);
+	}
+}
+
+    public class MainH {
+
+	public static void main(String[] args)
+	{
+		     // MAKE OBJECT OF HOSPITAL CLASS TO PASS THE ARGUMENTS
+		Hospital h1=new Hospital("Vedanta","Gurgaon",1000,"Heart");
+		h1.show1();
+		     // MAKE OBJECT OF ADD CLASS TO ADD NEW INFORMATION
+		Add a1=new Add("St.stiphen","Delhi",500,"Child","Trauma Centre");
+		System.out.println("Hospital add new centre");
+		a1.show1();
+	}
+}
+

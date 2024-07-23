@@ -1,0 +1,138 @@
+Q..1
+
+// IMPORT JAVA UTIL PACKAGE FOR USER INPUT
+import java.util.Scanner;
+public class Series 
+{	
+	//CREATE MAIN METHOD
+	public static void main(String args[])
+	{
+		//INITIALIZE THE MEMBER VARIABLES
+		int a=0; int b=1; int c;
+		//MAKE SCANNER OBJECT FOR USER INPUT
+		Scanner s=new Scanner(System.in);		
+		System.out.println("Enter the term :");
+		//ENTER THE VALUES WITH THE HELP OF OBJECT CREATION
+		int term=s.nextInt();
+		System.out.println("Series is");
+		//CREATION OF  FOR LOOP AND CONDITIONAL LOOP
+		for(int i=1; i<=term; i++)
+		{
+			//PRINT THE VALUE 
+			System.out.print(" "+a+" ");
+			c=a+b;
+			a=b;
+			b=c;
+		}
+       }
+}
+------------------------------------------------------------------------------------
+Q..2
+
+//IMPORT JAVA UTIL PACKAGE FOR USER INPUT
+import java.util.Scanner;
+public class Armstong
+{	
+	//CREATE MAIN METHOD
+	public static void main(String[] args) 
+	{
+		//INITIALIZE MEMBER VARIABLES
+		int rem; int arm=0;int c;
+		//MAKE SCANNER OBJECT FOR USER INPUT
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the value :");
+		int num=s.nextInt();
+		
+		c=num;
+		// USE CONDITIONAL STATEMENTS WHILE
+		while(num>0)
+		{
+			rem=num%10;
+			arm=(rem*rem*rem)+arm;
+			num=num/10;
+		}
+		// USE CONDITIONAL STATEMENTS IF ELSE
+		if(c==arm)
+		{
+			//PRINTS THE VALUES
+			System.out.println("Number is armstrong");
+		}
+		else 
+		{
+			System.out.println("Number is not armstrong");
+		}
+      }
+}
+------------------------------------------------------------------------------------
+Q..3
+
+
+//IMPORT JAVA UTIL PACKAGE FOR USER INPUT
+import java.util.Scanner;
+public class Prime 
+{
+	//CREATE MAIN METHOD
+	public static void main(String[] args) 
+	{
+		//INITIALIZE MEMBER VARIABLES
+		int count=0;
+		//MAKE SCANNER OBJECT FOR USER INPUT
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the values");
+		int a=s.nextInt();
+		
+		for(int i=1;i<=a; i++)
+		{
+			//CREATION OF NESTED FOR LOOP AND CONDITIONAL LOOP
+			if(a%i==0)
+			{
+				count++;
+			}
+		}
+		//CONDITIONAL SATEMENT
+		if(count==2)
+		{
+			System.out.println("Number is prime");
+		}else
+		{
+			System.out.println("Number is not prime");
+		}
+  	}
+}
+------------------------------------------------------------------------------------
+Q..4
+
+//IMPORT JAVA UTIL PACKAGE FOR USER INPUT
+import java.util.Scanner;
+public class PrimeS
+{
+	//CREATE MAIN METHOD
+	public static void main(String[] args) 
+	{
+		//INITIALIZE MEMBER VARIABLES
+		int n1; int n2; int i; int j;
+		//MAKE SCANNER OBJECT FOR USER INPUT
+		Scanner s=new Scanner(System.in);
+		System.out.print("Enter the values of n1 and n2");
+		//ENTER THE VALUES WITH THE HELP OF OBJECT CREATION
+		n1=s.nextInt();
+		n2=s.nextInt();
+		System.out.println("Series is ");
+		//CREATION OF NESTED FOR LOOP AND CONDITIONAL LOOP
+		for(i=n1; i<=n2; i++)
+		{
+			for(j=2; j<=i; j++)
+			{
+				if(i%j==0)
+				break;
+			}
+			if(i==j)
+			//PRINT THE VALUE OF J FOR PRIME NUMBERS
+			System.out.println(" " +j+" ");				
+		}
+	}
+}
+
+
+
+		

@@ -1,0 +1,142 @@
+Q..1
+
+// CREATE THE CLASS FOR EMPLOYEE DETAILS
+public class Employee
+{
+	// DECLARE THE MEMBER VARIABLES 
+	public String name;
+	public long salary;
+	public long date_of_join;
+	
+	// GENRATE A PARAMETARIZED CONSTRUCTOR
+	public Employee(String name, long salary, long dateofjoin) 
+	{
+	
+		this.name = name;
+		this.salary = salary;
+		this.date_of_join = dateofjoin;
+	}		
+}
+
+// CREATE A MAIN CLASS
+public class Mainemp
+{
+	// USE THE MAIN METHOD
+	public static void main(String[] args) 
+	{
+		//CREATE A OBJECT OF EMPLOYEE CLASS OF AN ARRAY SIZE 10
+		Employee arr[]= new Employee[10];
+		// PASS THE ARGUMENTS TO THE CONSTRUCTOR
+		System.out.println("Present the data of Employees\n");
+		arr[0]=new Employee("Ram",40000,10_01_2023);
+		arr[1]=new Employee("Keshav",20000,12_10_2020);
+		arr[2]=new Employee("Isha",15000,20_09_2021);
+		arr[3]=new Employee("Himanshu",40000,15_09_2022);
+		arr[4]=new Employee("Ankit",35000,23_04_2020);
+		arr[5]=new Employee("Vikas",30000,10_07_2021);
+		arr[6]=new Employee("Subhanshu",60000,25_12_2024);
+		arr[7]=new Employee("Vinit",50000,05_02_2022);
+		arr[8]=new Employee("Aashish",90000,25_10_2024);
+		arr[9]=new Employee("Vandna",50000,10_08_2022);
+		
+		//USE THE FOR EACH LOOP FOR PRINT THE DATA
+		for(Employee t:arr)
+		{
+			System.out.println("Employee name : "+t.name);
+			System.out.println("Employee salary : "+t.salary);
+			System.out.println("Employee date_of_join : "+t.date_of_join);
+			System.out.println("\n");
+		}
+	}
+
+}
+
+
+
+-----------------------------------------------------------------------------------------------------------
+Q..2
+
+//CREATE A CLASS 
+public class Television 
+{
+	// DECLARE MEMBER VARIABLES
+	private String Tname;
+	private int Tprice;
+	private String Tfeature;
+	
+	//GENRATE THE PARAMETARIZED CONSTRUCTOR
+	public Television(String tname, int tprice, String tfeature)
+	{
+		Tname = tname;
+		Tprice = tprice;
+		Tfeature = tfeature;
+	}
+	//CRETAE SHOW METHOD
+	 public void Show()
+	 {
+		 System.out.println("Television name -:" +Tname);
+		 System.out.println("Television price -:" +Tprice);
+		 System.out.println("Television feature -:" +Tfeature);
+	 }
+}
+
+//CREATE  A CLASS AND EXTENDS CLASS TELEVISION
+public class Convert extends Television
+{
+		//INITIALIZE MEMBER VARIABLE
+		private String coversion;
+		
+		//GENRATE PARAMETARIZED CONSTRUTOR
+		public Convert(String tname, int tprice, String tfeature, String coversion) 
+		{
+			super(tname, tprice, tfeature);
+			this.coversion = coversion;
+		}
+		//@ OVRRIDEVTHE METHOD SHOW
+		public void show()
+		{
+			super.Show();
+			System.out.println("Convert version comes -:" +coversion);
+		}
+}		
+
+//CREATE A CLASS AND EXTENDS CONVERT CLASS
+public class Updatetv extends Convert
+{
+	//INITIALIZE MEMBER VARIABLE
+	private String addfeature;
+	//GENRATE PARAMETARIZED CONSTRUCTOR 
+	public Updatetv(String tname, int tprice, String tfeature, String coversion, String addfeature) 
+	{
+		super(tname, tprice, tfeature, coversion);
+		this.addfeature = addfeature;
+	}
+	//@ OVERRIDE THE SHOW METHOD
+	public void show()
+	{
+		super.show();
+		System.out.println("Features update in 2024 -:"+addfeature);	
+	}
+}
+
+
+public class MainTv 
+{
+	//INITIALIZE MAIN METHOD
+	public static void main(String[] args)
+	{	
+		//CREATE A OBJECT 
+		System.out.println("INFORMATION PROVIDES ABOUT TELEVISIONS -:\n");
+		// PASS THE ARGUMENTS FOR PRINTS THE VALUES
+		Television t1=new Television("SANSUI",15000,"CATHOD RAY");
+		t1.Show();
+		System.out.println("\n");
+		Convert c1=new Convert("ONIDA",20000,"TUBE","CRYSTAL DISPLAY");
+		c1.show();
+		System.out.println("\n");
+		Updatetv u1=new Updatetv("ONIDA",25000,"TUBES","CRYSTAL DISPLAY","EMITTING DIAODE");
+		u1.show();
+	}
+
+}
+

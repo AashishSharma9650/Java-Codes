@@ -1,0 +1,149 @@
+Q..1
+
+//IMPORT JAVA UTIL PACKAGE FOR USER INPUT
+import java.util.Scanner;
+public class Square 
+{
+	//CREATE MAIN METHOD
+	public static void main(String[] args)
+	{
+		//INITIALIZE MEMBER VARIABLES
+		int num; int sum;
+		//MAKE SCANNER OBJECT FOR USER INPUT
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the values");
+		num=s.nextInt();
+		//DECLARE A METHOD
+		sum=sumofSquare(num);
+		System.out.println("Sum of num :"+sum);	
+	}
+	//CREATE A METHOD SUMOFSQUARE
+	private static int sumofSquare(int num) 
+	{
+		int newsum=0;
+		//USE CONDITIONAL SATETEMENT FOR SUMOFSQUARE
+		do {
+			int rem=num%10;
+			newsum=newsum+(rem*rem);
+			num=num/10;
+		}while(num!=0);
+		//RETURN VALUE BY THIS WE GET SUMOFSQUARE
+		return newsum;
+	}
+}
+------------------------------------------------------------------------------
+Q..2
+
+//IMPORT JAVA UTIL PACKAGE FOR USER INPUT
+import java .util.Scanner;
+public class Compare
+{
+	//CREATE MAIN METHOD
+	public static void main(String[] args)
+	{
+		//INITIALIZE MEMBER VARIABLES
+		 int n1; int n2;
+		//MAKE SCANNER OBJECT FOR USER INPUT 
+		Scanner s=new Scanner(System.in);
+		//ENTER THE VALUES
+		System.out.println("Enter the values n1");
+		n1=s.nextInt();
+		System.out.println("Enter the values n2");
+		n2=s.nextInt();
+		// USE CONDITIONAL STATEMENTS
+		if(n1>n2)
+		{
+			// PRINT THE VALUES
+			System.out.println("n1 has greater value :" +n1);
+		}
+		else
+		{
+			System.out.println("n2 has greater value: " +n2);
+		}
+		
+	}
+}
+----------------------------------------------------------------------------------
+Q..3
+public class Star {
+	//CREATE MAIN METHOD
+	public static void main(String[] args) 
+	{
+		//USE NESTED FOR LOOP
+		for(int i=1; i<=5;i++)
+		{
+			for(int j=5; j>=i; j--)
+			{
+				System.out.print("*");			
+			}
+			System.out.println("\n");
+		}
+	}
+}
+------------------------------------------------------------------------------------
+Q..4
+
+//IMPORT JAVA UTIL PACKAGE FOR USER INPUT
+import java.util.Scanner;
+public class Armstong
+{	
+	//CREATE MAIN METHOD
+	public static void main(String[] args) 
+	{
+		//INITIALIZE MEMBER VARIABLES
+		int rem; int arm=0;int c;
+		//MAKE SCANNER OBJECT FOR USER INPUT
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the value :");
+		int num=s.nextInt();
+		
+		c=num;
+		// USE CONDITIONAL STATEMENTS WHILE
+		while(num>0)
+		{
+			rem=num%10;
+			arm=(rem*rem*rem)+arm;
+			num=num/10;
+		}
+		// USE CONDITIONAL STATEMENTS IF ELSE
+		if(c==arm)
+		{
+			//PRINTS THE VALUES
+			System.out.println("Number is armstrong");
+		}
+		else 
+		{
+			System.out.println("Number is not armstrong");
+		}
+       }
+}
+------------------------------------------------------------------------------------------
+Q..5
+
+import java.util.Scanner;
+public class Average 
+{
+	//IMPORT JAVA UTIL PACKAGE FOR USER INPUT
+	public static void main(String[] args)
+	{
+		//INITIALIZE MEMBER VARIABLES
+		int sub_1,sub_2,sub_3,sub_4;
+		//MAKE SCANNER OBJECT FOR USER INPUT
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the marks of subjects");
+		sub_1=s.nextInt();
+		sub_2=s.nextInt();
+		sub_3=s.nextInt();
+		sub_4=s.nextInt();
+		//USE CONDITIONAL SATETEMENT 
+		if((sub_1+sub_2+sub_3+sub_4)/4>=50.00)
+		{
+			//SHOW THW OUTPUT WHETHER IS PASS AND FAIL
+			System.out.println("Student is pass");
+		}
+		else
+		{
+			System.out.println("Student is fail");
+		}
+	}
+}

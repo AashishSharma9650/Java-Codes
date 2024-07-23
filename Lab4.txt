@@ -1,0 +1,141 @@
+Q..1 
+// INITIALIZE CLASS AS ABSTRACT
+
+public abstract class  Shape
+{
+	// METHOD DECLARATION
+	public abstract void volume();
+}
+
+// EXTENDS THE CLASS SHAPE
+public class Cube extends Shape
+{
+	//INITIALIZE THE VARIBLES
+	public int side;
+	// CREATE ONE PARAMETERIZE CONSTRUCTOR
+	public Cube(int side)
+	{
+		this.side=side;
+	}
+	//OVERRIDE THE METHOD
+	public void volume()
+	{
+		System.out.println(side*side*side);
+	}
+}
+
+//EXTENDS THE CLASS SHAPE
+public class Cuboid extends Shape
+{
+	//INITIALIZE THE VARIBLES
+		int lenght;
+		int breadth;
+		int height;
+		// CREATE 3 PARAMETERIZE CONSTRUCTOR
+		public Cuboid(int lenght, int breadth, int height)
+		{
+			this.lenght = lenght;
+			this.breadth = breadth;
+			this.height = height;
+		}
+		//OVERRIDE THE METHOD
+		public void volume()
+		{
+			System.out.println(lenght*breadth*height);
+		}
+}
+
+//CREATE THE MAIN CLASS
+public class MainC 
+{
+	public static void main(String[] args)
+	{
+		// PASS THE ARGUMENTS FOR THEIR RESPECTIVE METHODS
+		Shape s=new Cube(10);
+		s.volume();
+		Shape s1=new Cuboid(50,25,5);
+		s1.volume();		
+	}
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
+Q..2
+//CREATE THE INTERFACE
+public interface Hillstation 
+{
+	//CREATE METHODS
+	void location(String name);
+	void famousfor(String famous);
+}
+
+
+//CREATE CLASS MANALI AND IMPLEMENTS INTERFACE HILLSTATION
+class Manali implements Hillstation
+{
+	//OVERRIDE
+	//CREATE 1 PARAMETER METHOD
+	public void location(String name)
+	{
+		System.out.println("About the location");
+		System.out.println(name);
+	}
+	//OVERRIDE
+	//CREATE 1 PARAMETER METHOD
+	public void famousfor(String famous)
+	{
+		System.out.println("About popularity");
+		System.out.println(famous);	
+	}
+}
+
+//CREATE CLASS MUSSORIE AND IMPLEMENTS INTERFACE HILLSTATION
+class Mussorie implements Hillstation
+{
+	//OVERRIDE
+	//CREATE 1 PARAMETER METHOD
+	public void location(String name)
+	{
+		System.out.println("About the location :"+name);
+	}
+	//OVERRIDE
+	//CREATE 1 PARAMETER METHOD
+	public void famousfor(String famous)
+	{
+		System.out.println("About the popularity :"+famous);
+	}
+}
+
+
+//CREATE CLASS gULMARG AND IMPLEMENTS INTERFACE HILLSTATION
+class Gulmarg implements Hillstation
+{
+	//OVERRIDE
+	//CREATE 1 PARAMETER METHOD
+	public void location(String name)
+	{
+		System.out.println("Location information :" +name);
+	}
+	//OVERRIDE
+	//CREATE 1 PARAMETER METHOD
+	public void famousfor(String famous)
+	{
+		System.out.println("Famous for :"+ famous);
+	}
+}
+
+public class MainH {
+
+	public static void main(String[] args) 
+	{
+	    //MAKE OBJECTS AND PASS THE VALUES THEIR RESPECTIVE METHODS
+		Manali m1=new Manali();
+		m1.location("shimla");
+		m1.famousfor("Snow");
+		Mussorie m2=new Mussorie();
+		m2.location("Dehradun");
+		m2.famousfor("Hills");
+		Gulmarg g1=new Gulmarg();
+		g1.location("Baramulla");
+		g1.famousfor("Skiing");
+	}
+}
